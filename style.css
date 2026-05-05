@@ -1,0 +1,1020 @@
+/* =========================================
+   WORLD Z PROYECT AETERNA - MAIN STYLES
+   ========================================= */
+
+/* --- 1. VARIABLES Y BASE --- */
+:root {
+    --red: #ff4d4d;
+    --orange: #ff8c00;
+    --green: #2ecc71;
+    --purple: #9b59b6;
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+body { 
+    margin: 0; 
+    background: #000;
+    color: white; 
+    font-family: 'Poppins', sans-serif; 
+    overflow-x: hidden; 
+}
+
+/* Fondo de Nebulosa Dinámica */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at 85% 85%, rgba(60, 81, 177, 0.6) 0%, transparent 70%), 
+                radial-gradient(circle at 15% 15%, rgba(207, 84, 136, 0.514) 0%, transparent 60%),  
+                radial-gradient(circle at 55% 55%, rgba(29, 255, 244, 0.6) 0%, transparent 70%),
+                radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.7) 0%, #000 100%);
+    z-index: -1;
+    animation: backgroundPulse 8s ease infinite alternate;
+}
+
+/* --- 2. BARRA DE NAVEGACIÓN --- */
+.navbar { 
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    background: rgba(10, 10, 10, 0.98); /* Color oscuro, sólido y profesional */
+    display: flex; 
+    justify-content: space-between; /* Empuja los elementos a los extremos */
+    align-items: center;
+    padding: 15px 50px; /* Barra mucho más alta y con espacio a los lados */
+    z-index: 1000; 
+    box-sizing: border-box; /* Evita que la barra se salga de la pantalla */
+    border-bottom: 1px solid rgba(255,255,255,0.05); /* Línea sutil debajo */
+}
+.navbar a { 
+    color: #888; 
+    text-decoration: none; 
+    font-weight: 700; 
+    font-size: 0.8rem; 
+    transition: 0.3s; 
+    text-transform: uppercase;
+}
+
+.navbar a.active, .navbar a:hover { 
+    color: white; 
+    text-shadow: 0 0 10px white; 
+}
+
+/* --- Contenedor del Logo --- */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-logo img {
+    height: 50px; /* Altura perfecta para que encaje dentro de la barra */
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(255, 77, 77, 0.4));
+}
+
+.nav-logo span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* --- Links del Centro --- */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a { 
+    color: #aaa; 
+    text-decoration: none; 
+    font-weight: 700; 
+    font-size: 0.9rem; 
+    transition: 0.3s; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links a.active, .nav-links a:hover { 
+    color: white; 
+    text-shadow: 0 0 10px white; 
+}
+
+/* --- Botón Modpack a la Derecha --- */
+.nav-btn {
+    background-color: var(--red); 
+    color: #fff !important;
+    padding: 20px 60px; /* <--- Esto lo hace muchísimo más alto y ancho */
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem; /* <--- Letra gigante */
+    font-weight: 900; /* Letra extra gruesa */
+    letter-spacing: 2px; /* Un poco de separación para que se lea perfecto */
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 6px; /* Borde ligeramente más redondeado por el tamaño */
+    transition: 0.3s;
+    box-shadow: 0 0 25px rgba(255, 77, 77, 0.6); /* Resplandor rojo más fuerte */
+}
+
+.nav-btn:hover {
+    transform: scale(1.08); /* Crece aún más cuando le pasas el cursor */
+    background-color: #ff3333;
+    box-shadow: 0 0 40px rgba(255, 77, 77, 0.9); /* Brillo explosivo al interactuar */
+}
+/* --- Alineación del lado derecho (Carrito + Botón) --- */
+.nav-action {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Separación perfecta entre el icono y el botón */
+}
+
+/* --- Estilos del Botón del Carrito --- */
+.cart-btn {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cart-icon {
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+    transition: 0.3s;
+}
+
+/* Efecto al pasar el mouse por el carrito */
+.cart-btn:hover {
+    color: var(--green); /* Brillará en verde como confirmación de tienda */
+    transform: scale(1.15) translateY(-2px); /* Se hace un poco más grande y salta ligeramente */
+}
+
+.cart-btn:hover .cart-icon {
+    filter: drop-shadow(0 0 15px var(--green));
+}
+
+/* --- 3. LAYOUT GENERAL Y SECCIONES --- */
+.section {
+    min-height: 100vh;
+    background: transparent !important; 
+    position: relative;
+}
+
+.main-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    width: 100%;
+    min-height: 100vh;
+    position: relative; 
+}
+
+.main-layout.reverse {
+    flex-direction: row-reverse;
+}
+
+.container, .info-box { 
+    width: 90%; 
+    max-width: 500px !important; 
+    padding: 40px; 
+    border-radius: 20px; 
+    background: rgba(255,255,255,0.03); 
+    border: 1px solid rgba(255,255,255,0.1); 
+    backdrop-filter: blur(10px); 
+    text-align: left; 
+    z-index: 10;
+}
+
+/* Contenedor centralizado clásico (Legacy) */
+.container {
+    text-align: center;
+    padding: 30px;
+}
+
+/* --- 4. TEXTOS Y TIPOGRAFÍA --- */
+.glitch {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    color: var(--red) !important;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.glitch-small {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    color: var(--red) !important;
+    text-shadow: 2px 2px 10px rgba(255, 77, 77, 0.4);
+    margin-bottom: 15px;
+}
+
+p, li { 
+    color: #eee !important; 
+    text-shadow: 1px 1px 5px black; 
+}
+
+.desc-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* --- 5. COMPONENTES GLOBALES (Botones y Status) --- */
+.server-status {
+    background: rgba(46, 204, 113, 0.25) !important;
+    border: 2px solid #2ecc71 !important;
+    color: #ffffff !important;
+    text-shadow: 0 0 8px #2ecc71;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.4);
+    font-weight: 900;
+    margin-bottom: 10px;
+    padding: 8px 20px; 
+    border-radius: 50px !important; 
+    display: inline-flex;
+    align-items: center;
+}
+
+.dot {
+    height: 12px; 
+    width: 12px;
+    background-color: var(--green);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    box-shadow: 0 0 10px var(--green);
+    animation: blink 1s infinite;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px;
+    margin: 15px 0;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+    border: none;
+    animation: pulse 2s infinite;
+    opacity: 1 !important; 
+}
+
+.btn-modpack { 
+    background-color: #ffe600 !important; 
+    color: #000 !important;
+    
+}
+.btn-modpack:hover { box-shadow: 0 0 25px rgba(230, 255, 2, 0.849); transform: scale(1.05); }
+
+.btn-cuseforge { 
+   background-color: #ff9100 !important; 
+    color: white !important;
+}
+.btn-cuseforge:hover { box-shadow: 0 0 25px rgba(185, 90, 1, 0.849); transform: scale(1.05);  }
+
+.btn-discord { 
+    background-color: #9b59b6 !important; 
+    color: white !important;
+}
+.btn-discord:hover { box-shadow: 0 0 25px rgba(155, 89, 182, 0.7); transform: scale(1.05); }
+
+.btn-store { 
+    background-color: #2ecc71 !important; 
+    color: #000 !important; 
+}
+.btn-store:hover { box-shadow: 0 0 25px rgba(46, 204, 113, 0.7); transform: scale(1.05); }
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* --- 6. PERSONAJES (Renders y Posicionamiento) --- */
+.character-slot {
+    position: absolute;
+    width: auto;
+    height: auto;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-layout:not(.reverse) .character-slot { right: 5%; }
+.main-layout.reverse .character-slot { left: 5%; }
+
+.character-float {
+    width: 280px; 
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6)) !important;
+    animation: floating 4s ease-in-out infinite;
+}
+
+/* Colores de resplandor por sección */
+
+#tutorial .character-float{ filter: drop-shadow(0 0 50px rgba(0, 255, 85, 0.863)) !important;}
+#comunidad .character-float { filter: drop-shadow(0 0 20px rgba(25, 0, 255, 0.479)) !important; }
+
+/* --- 7. TÍTULOS DE SECCIONES ESPECÍFICAS --- */
+#modpack h2 { 
+    color: var(--orange) !important; 
+    text-shadow: 0 0 25px rgba(255, 140, 0, 0.8) !important; 
+}
+
+#tutorial h2 { color: var(--green) !important; }
+
+#comunidad h2 { 
+    color: var(--purple) !important; 
+    text-shadow: 0 0 20px rgba(155, 89, 182, 0.7) !important; 
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+/* =========================================
+   NUEVO DISEÑO: TARJETAS DE TUTORIAL
+   ========================================= */
+
+/* Hacemos el contenedor un poco más ancho para que los videos luzcan bien */
+.tutorial-pro-box {
+    max-width: 650px !important;
+    padding: 40px;
+}
+
+/* Diseño de la Tarjeta Base */
+.tut-card {
+    background: rgba(0, 0, 0, 0.4); /* Fondo oscuro elegante */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Borde súper sutil */
+    border-radius: 16px; /* Esquinas redondeadas modernas */
+    padding: 20px;
+    margin-bottom: 25px; 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animación de rebote suave */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto al pasar el mouse por la tarjeta */
+.tut-card:hover {
+    transform: translateY(-8px); /* La tarjeta "flota" hacia arriba */
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Brillos personalizados para cada launcher al hacer Hover */
+.curse-card:hover { border-color: var(--orange); box-shadow: 0 15px 30px rgba(255, 140, 0, 0.2); }
+.sk-card:hover { border-color: var(--green); box-shadow: 0 15px 30px rgba(46, 204, 113, 0.2); }
+.tl-card:hover { border-color: var(--purple); box-shadow: 0 15px 30px rgba(155, 89, 182, 0.2); }
+
+/* Encabezado de la Tarjeta (Número + Título) */
+.tut-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* Número Gigante de Fondo (Estilo "Marca de Agua") */
+.tut-number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.05); /* Muy transparente */
+    line-height: 1;
+    transition: 0.3s;
+}
+
+/* El número brilla un poco cuando pasas el mouse */
+.tut-card:hover .tut-number {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+/* Limpieza del título dentro de la tarjeta */
+.tut-card .step-title {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.tut-card .step-title::before {
+    display: none; /* Quitamos el cuadrito viejo para que el número sea el protagonista */
+}
+.tutorial-box::-webkit-scrollbar-thumb { background: var(--green); border-radius: 10px; }
+
+.tutorial-item {
+    margin-bottom: 30px;
+    text-align: left;
+    border-bottom: 1px solid rgba(46, 204, 113, 0.2);
+    padding-bottom: 15px;
+}
+
+.step-title {
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tutorial-item .step-title::before {
+    content: "■";
+    font-size: 0.9rem;
+    color: inherit; 
+}
+
+/* Colores de Títulos de Tutorial */
+.t-curse { color: var(--orange) !important; text-shadow: 0 0 10px rgba(255, 140, 0, 0.5) !important; }
+.t-recom { color: var(--red) !important; text-shadow: 0 0 10px rgba(255, 140, 0, 0.5) !important; }
+.t-sk { color: var(--green) !important; text-shadow: 0 0 10px rgba(46, 204, 113, 0.5) !important; }
+.t-tl { color: var(--purple) !important; text-shadow: 0 0 10px rgba(155, 89, 182, 0.5) !important; }
+
+.tutorial-item .step-title.t-curse { color: var(--orange) !important; }
+.tutorial-item .step-title.t-sk { color: var(--green) !important; }
+.tutorial-item .step-title.t-tl { color: var(--purple) !important; }
+
+/* Contenedor de Video */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+}
+
+#tutorial ul { list-style: none; padding: 0; margin-top: 15px; }
+#tutorial li { margin: 10px 0; font-weight: 600; color: #eee !important; }
+
+/* --- 9. UTILIDADES Y EXTRAS --- */
+
+
+
+#inicio { padding-top: 150px; }
+
+/* Clases de texto personalizadas para descripciones */
+.txt-2 { color: #ff4d4d !important; text-shadow: 0 0 5px rgba(255, 77, 77, 0.3); }
+.txt-3 { color: #2ecc71 !important; text-shadow: 0 0 5px rgba(46, 204, 113, 0.3); }
+.txt-4 { color: #9b59b6 !important; text-shadow: 0 0 5px rgba(155, 89, 182, 0.3); }
+.txt-1 { color: #3498db !important; text-shadow: 0 0 5px rgba(52, 152, 219, 0.3); }
+
+/* --- 10. ANIMACIONES CLAVE --- */
+@keyframes backgroundPulse { 0% { opacity: 0.8; } 100% { opacity: 1; } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
+@keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+/* --- 11. RESPONSIVO (MÓVILES) --- */
+@media (max-width: 768px) {
+    .main-layout, .main-layout.reverse { flex-direction: column; text-align: center; }
+.info-box { 
+    width: 90%; 
+    max-width: 500px !important; 
+    padding: 40px; 
+    border-radius: 20px; 
+    background: rgba(15, 15, 15, 0.6); /* Un poco más oscuro */
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra profunda */
+    backdrop-filter: blur(12px); 
+    text-align: left; 
+    z-index: 10;
+    transition: all 0.4s ease; /* Transición suave */
+}
+/* Efecto al pasar el ratón: El cuadro se ilumina y flota ligeramente */
+.info-box:hover {
+    border: 1px solid rgba(255, 77, 77, 0.3); /* Borde rojo sutil */
+    box-shadow: 0 15px 40px rgba(255, 77, 77, 0.15); /* Resplandor rojo debajo */
+    transform: translateY(-5px); /* Flota hacia arriba */
+}
+
+#tutorial .info-box:hover { border-color: rgba(46, 204, 113, 0.3); box-shadow: 0 15px 40px rgba(46, 204, 113, 0.15); }
+#comunidad .info-box:hover { border-color: rgba(155, 89, 182, 0.3); box-shadow: 0 15px 40px rgba(155, 89, 182, 0.15); }
+    .character-slot { position: relative; left: 0 !important; right: 0 !important; margin-top: 20px; }
+}
+
+/* Centrar el texto solo en el recuadro de bienvenida */
+.inicio-box {
+    text-align: center !important;
+}
+
+/* --- Ajuste de tamaño para el recuadro de Bienvenida --- */
+.inicio-box {
+    max-width: 800px !important; /* Antes estaba limitado a 500px. Ahora es mucho más ancho */
+    text-align: left !important; /* Lo regresamos a la izquierda para que el formato de Informe Táctico se lea perfecto */
+}
+
+/* =========================================
+   SECCIÓN TUTORIAL - HORIZONTAL (GRID)
+   ========================================= */
+.tutorial-panoramic {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0; /* Espacio arriba y abajo */
+    min-height: 100vh;
+}
+
+.tutorial-header {
+    text-align: center;
+    margin-bottom: 40px;
+    z-index: 10;
+}
+
+.tutorial-header p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* El truco para ponerlos uno al lado del otro */
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    
+    /* --- AQUÍ ESTÁ EL CAMBIO --- */
+    width: 95%; /* Aprovecha casi toda la pantalla de lado a lado */
+    max-width: 1600px; /* Subimos el límite de 1200px a 1600px para que crezcan mucho más */
+    /* --------------------------- */
+    
+    z-index: 10; 
+    position: relative; 
+}
+
+/* Asegurarnos de que las tarjetas no tengan márgenes raros en el grid */
+.tutorial-grid .tut-card {
+    margin-bottom: 0;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+}
+
+
+
+.character-slot-corner .character-float {
+    width: 250px; /* Un poco más pequeño para no robar tanta cámara */
+    opacity: 0.8; /* Ligeramente transparente para integrarse mejor al fondo */
+}
+
+/* --- AJUSTE PARA CELULARES --- */
+/* Si alguien entra desde su celular, los videos se pondrán uno abajo del otro automáticamente */
+@media (max-width: 992px) {
+    .tutorial-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .tutorial-grid {
+        grid-template-columns: 1fr; /* 1 columna en celulares */
+    }
+    .character-slot-corner {
+        display: none; /* Ocultamos al oso en celular para que no estorbe */
+    }
+}
+/* =========================================
+   CAPA 1: OSO CENTRADO EN EL FONDO
+   ========================================= */
+.character-slot-background {
+    position: absolute;
+    top: 55%; /* Lo bajamos un poquito para que quede centrado con los videos, no con el título */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Esto lo centra perfectamente a la mitad */
+    z-index: 1; /* CAPA 1: Se va para atrás */
+    pointer-events: none; /* SÚPER IMPORTANTE: Evita que el oso bloquee los clics a los videos */
+    opacity: 0.5; /* Lo hacemos semi-transparente para que no estorbe la lectura */
+}
+
+.character-slot-background .character-float {
+    width: 800px; /* Lo hacemos más grande para que abarque espacio detrás de los 3 videos */
+    /* Conserva la animación de flotar y el brillo que ya le habías puesto */
+}
+
+/* =========================================
+   CAPA 2: CUADRÍCULA AL FRENTE
+   ========================================= */
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+    z-index: 10; /* CAPA 2: Se viene para el frente */
+    position: relative; /* Necesario para que el z-index funcione correctamente aquí */
+}
+
+/* Para que en celular no se vea gigante el oso de fondo */
+@media (max-width: 768px) {
+    .character-slot-background .character-float {
+        width: 250px; 
+    }
+}
+
+.malla-tactica {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    /* Crea un patrón de puntos semi-transparentes */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: -1; 
+    pointer-events: none; /* Para que no estorbe al hacer clic */
+}
+
+/* =========================================
+   IMÁGENES DE FONDO TEMÁTICAS (DIFUMINADAS)
+   ========================================= */
+.bg-decor-slot {
+    position: absolute;
+    z-index: 1; /* Se queda atrás del recuadro de texto */
+    pointer-events: none; /* Evita que estorbe si el usuario hace clic */
+}
+
+/* Lógica de posición automática (Opuesto al oso) */
+/* Si el oso está a la DERECHA, la imagen va a la IZQUIERDA */
+.main-layout:not(.reverse) .bg-decor-slot { 
+    left: 2%; 
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Si el oso está a la IZQUIERDA (reverse), la imagen va a la DERECHA */
+.main-layout.reverse .bg-decor-slot { 
+    right: 2%; 
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Estilo de la imagen difuminada */
+.bg-decor-img {
+    width: 800px; 
+    height: 800px;
+    object-fit: cover; 
+    /* Ya no necesitamos el border-radius: 50% porque la máscara hará todo el trabajo sucio */
+    
+    /* --- EL TRUCO DEL DIFUMINADO EXTREMO --- 
+       black 15%: Solo el centro (un 15%) se ve perfecto y colorido.
+       transparent 65%: La imagen se vuelve 100% invisible mucho antes de llegar a la orilla.
+       El espacio entre 15% y 65% crea ese desvanecimiento súper suave. */
+    -webkit-mask-image: radial-gradient(circle at center, black 15%, transparent 65%);
+    mask-image: radial-gradient(circle at center, black 15%, transparent 65%);
+    
+    /* Bajamos un pelito la opacidad para que el morado/rojo de tu fondo 
+       siga bañando la imagen y parezca que están en el mismo ambiente */
+    opacity: 10.0; 
+    filter: none; 
+}
+
+/* =========================================
+   MEJORAS DE COLOR PARA EL TEXTO (HUD TÁCTICO)
+   ========================================= */
+
+/* 1. Apagamos el blanco puro del texto base para que no lastime la vista */
+.welcome-content .desc-text {
+    color: #a5b1c2; /* Un tono gris/azulado táctico */
+    line-height: 1.8;
+}
+
+/* 2. Hacemos que las negritas brillen como alertas del sistema */
+.welcome-content strong {
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.welcome-content strong.t-red {
+    text-shadow: 0 0 12px rgba(255, 77, 77, 0.4);
+}
+
+.welcome-content strong.t-orange {
+    text-shadow: 0 0 12px rgba(255, 140, 0, 0.4);
+}
+
+/* 3. Coloreamos el texto de las listas para que no sea blanco */
+.tactical-list {
+    color: #b0b8c4; /* Gris ligeramente más oscuro que el párrafo */
+}
+
+/* 4. Efecto interactivo: El texto de la lista se ilumina al pasar el ratón */
+.tactical-list > li {
+    transition: color 0.3s ease;
+}
+
+.tactical-list > li:hover {
+    color: #ffffff; /* Se vuelve blanco brillante al leerlo */
+}
+
+/* 5. Los títulos de cada sector ahora emiten un resplandor de su propio color */
+.sector-green .sector-title { 
+    text-shadow: 0 0 15px rgba(46, 204, 113, 0.5); 
+}
+
+.sector-purple .sector-title { 
+    text-shadow: 0 0 15px rgba(155, 89, 182, 0.5); 
+}
+
+.server-status-badge {
+    display: inline-flex !important;
+    flex-direction: row !important; /* Obliga al punto y al texto a estar en la misma línea */
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important; /* Separación exacta entre el punto y las letras */
+    
+    background-color: rgba(10, 10, 10, 0.8) !important; /* Fondo oscuro asegurado */
+    border: 2px solid rgba(46, 204, 113, 0.8) !important; /* Borde verde visible */
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.3) !important;
+    
+    padding: 8px 22px !important; /* Le da el tamaño gordito */
+    border-radius: 50px !important; /* Esto es lo que crea el ÓVALO perfecto */
+    
+    margin-bottom: 25px !important;
+    width: max-content !important; /* Evita que el óvalo se estire por toda la pantalla */
+}
+
+
+
+/* El punto verde con animación */
+
+/* Efecto al pasar el ratón (brilla más) */
+
+/* El texto de "Server Online" */
+.server-status-badge .status-text {
+    color: #2ecc71 !important;
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.5px !important;
+    margin: 0 !important; /* Evita que otras configuraciones empujen el texto hacia abajo */
+    line-height: 1 !important;
+}
+
+/* El punto verde con animación de radar/latido */
+.status-dot {
+    width: 12px !important;
+    height: 12px !important;
+    background-color: #2ecc71 !important;
+    border-radius: 50% !important;
+    box-shadow: 0 0 10px #2ecc71 !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important; /* Evita que el punto se aplaste */
+    animation: radar-pulse 1.5s infinite alternate !important;
+}
+
+/* Animación que hace que el punto brille fuerte y despacio */
+@keyframes radar-pulse {
+    0% {
+        opacity: 0.5;
+        box-shadow: 0 0 5px #2ecc71;
+    }
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 15px #2ecc71, 0 0 25px #2ecc71;
+    }
+}
+
+/* =========================================
+   SECCIÓN MODPACK: TEXTO, VIDEO Y CARRUSEL
+   ========================================= */
+
+/* Ajustamos el ancho para que quepa todo sin verse apretado */
+.modpack-box {
+    max-width: 650px !important;
+}
+
+/* --- ESTILOS DEL TEXTO MEJORADO --- */
+.modpack-intro {
+    margin-bottom: 25px;
+}
+
+.highlight-orange {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Recuadro de aviso "Plug & Play" */
+.tactical-note {
+    background: rgba(255, 140, 0, 0.1); /* Fondo naranja muy transparente */
+    border-left: 3px solid var(--orange); /* Línea naranja a la izquierda */
+    padding: 12px 15px;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+    color: #e0e6ed;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.tactical-note2 {
+    background: rgba(0, 252, 97, 0.171); /* Fondo naranja muy transparente */
+    border-left: 3px solid var(--green); /* Línea naranja a la izquierda */
+    padding: 12px 15px;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+    color: #ffe609;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Recuadro que hace destacar la IP */
+.ip-box {
+    background: rgba(10, 10, 10, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 12px 20px;
+    text-align: center;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+}
+
+.ip-label {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    color: #8c9baf;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+}
+
+.ip-address {
+    color: var(--orange);
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+    user-select: all; /* Permite copiar la IP con un solo clic */
+}
+
+/* --- ESTILOS DEL VIDEO --- */
+.modpack-video {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporción 16:9 obligatoria */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 140, 0, 0.4);
+    box-shadow: 0 5px 20px rgba(255, 140, 0, 0.15);
+}
+
+.modpack-video iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 6px;
+}
+
+/* --- ESTILOS DEL CARRUSEL --- */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; /* Permite deslizar */
+    scroll-snap-type: x mandatory; 
+    padding-bottom: 12px; 
+    scrollbar-width: thin;
+    scrollbar-color: var(--orange) rgba(0,0,0,0.3);
+}
+
+/* Barra de scroll para Chrome/Edge/Safari */
+.carousel-track::-webkit-scrollbar { display: none;; }
+.carousel-track::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.3); border-radius: 10px; }
+.carousel-track::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 10px; }
+
+.carousel-img {
+    flex: 0 0 85%; /* Muestra un poco de la siguiente imagen */
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    scroll-snap-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease;
+}
+
+.carousel-img:hover {
+    transform: scale(1.02);
+    border-color: var(--orange);
+}
+
+.scroll-hint {
+    text-align: right;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.8rem;
+    color: #8c9baf;
+    margin-top: 5px;
+}
+
+/* --- AUMENTAR TAMAÑO DEL OSO SOLO EN EL MODPACK --- */
+
+/* Buscamos el personaje que esté específicamente dentro de #modpack */
+#modpack .character-float {
+    width: 500px !important; /* Aquí es donde ajustas el tamaño. Prueba con 550px o 600px */
+    max-width: none !important; /* Quita cualquier límite anterior */
+    transform: scale(1.1); /* Un empujón extra de tamaño del 10% */
+    filter: drop-shadow(0 0 45px rgba(255, 140, 0, 0.692))!important; 
+}
+
+/* Ajustamos el contenedor para que el oso grande no se corte */
+#modpack .character-slot {
+    flex: 0 0 40% !important; /* Le damos un poco más de espacio al oso (40% de la pantalla) */
+}
+
+#inicio .character-float {
+    width: 400px !important; /* Aquí es donde ajustas el tamaño. Prueba con 550px o 600px */
+    max-width: none !important; /* Quita cualquier límite anterior */
+    transform: scale(1.1); /* Un empujón extra de tamaño del 10% */
+    filter: drop-shadow(0 0 40px rgb(255, 238, 0)) !important; 
+ 
+}
+
+/* Ajustamos el contenedor para que el oso grande no se corte */
+#inicio .character-slot {
+    flex: 0 0 40% !important; /* Le damos un poco más de espacio al oso (40% de la pantalla) */
+}
+
+#turorial .character-float {
+    width: 800px !important; /* Aquí es donde ajustas el tamaño. Prueba con 550px o 600px */
+    max-width: none !important; /* Quita cualquier límite anterior */
+    transform: scale(1.1); /* Un empujón extra de tamaño del 10% */
+    filter: drop-shadow(0 0 45px rgba(2, 255, 255, 0.87))!important; 
+}
+
+/* Ajustamos el contenedor para que el oso grande no se corte */
+#tutorial .character-slot {
+    flex: 0 0 40% !important; /* Le damos un poco más de espacio al oso (40% de la pantalla) */
+}
+
+/* --- CARRUSEL PROFESIONAL CON FLECHAS --- */
+.pro-carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Tamaño máximo, puedes ajustarlo */
+    margin: 30px auto; /* Lo centra en la pantalla */
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    box-shadow: 0 0 20px rgba(0,0,0,0.8); /* Sombra oscura para dar profundidad */
+    border: 1px solid #ff8c00; /* Borde táctico naranja */
+    overflow: hidden;
+}
+
+.pro-carousel-track {
+    display: flex;
+    width: 100%;
+    overflow: hidden; /* Esconde las fotos que no caben */
+    scroll-behavior: smooth; /* Deslizamiento suave */
+}
+
+.pro-carousel-item {
+    min-width: 100%; /* Obliga a que cada imagen ocupe todo el cuadro */
+    height: 450px; /* Fija la altura para que no brinque la página */
+    object-fit: cover; /* Recorta la foto sin aplastarla para que encaje perfecto */
+}
+
+/* Diseño de las Flechas */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(15, 15, 15, 0.8);
+    color: #ff8c00;
+    border: 1px solid #ff8c00;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 15px 20px;
+    z-index: 10;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el ratón (Hover) */
+.carousel-btn:hover {
+    background: #ff8c00;
+    color: #000;
+    box-shadow: 0 0 15px #ff8c00;
+}
+
+/* Posición de cada flecha */
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }

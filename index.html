@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Z | SERVIDOR DE MINECRAFT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/worldz_logo.png">
+</head>
+<body>
+<div class="malla-tactica"></div>
+    <div class="blob-container">
+        <div class="blob blob-red"></div>
+        <div class="blob blob-orange"></div>
+        <div class="blob blob-green"></div>
+        <div class="blob blob-purple"></div>
+    </div>
+
+<nav class="navbar">
+    <!-- 1. IZQUIERDA: Tu Logo -->
+    <div class="nav-logo">
+        <!-- Cambia "img/logo.png" por la ruta real de tu logo -->
+        <img src="img/worldz-title.png" alt="World Z Logo">
+
+    </div>
+
+    <!-- 2. CENTRO: Enlaces de navegación -->
+    <div class="nav-links">
+        <a href="#inicio" class="active">INICIO</a>
+        <a href="#tutorial">TUTORIAL</a>
+        <a href="#comunidad">COMUNIDAD</a>
+    </div>
+
+    <!-- 3. DERECHA: Botón gigante de Modpack -->
+   <!-- 3. DERECHA: Carrito y Botón Modpack -->
+    <div class="nav-action">
+        <!-- Botón del Carrito de Compras -->
+        <a href="https://worldz-resurecction-proyect.tebex.io" class="cart-btn" title="Ir a la Tienda">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="cart-icon">
+                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+            </svg>
+        </a>
+        
+        <!-- Botón de Modpack -->
+        <a href="#modpack" class="nav-btn">DOWNLOAD</a>
+    </div>
+</nav> <!-- Cierre de tu barra de navegación -->
+
+</div>
+
+<section id="inicio" class="section">
+    <div class="main-layout"> 
+        
+        <!-- 1. PRIMERO EL OSO (Para que se quede anclado a la izquierda) -->
+        <div class="character-slot">
+            <img src="img/bienvenida2.png" class="character-float" alt="Oso Inicio">
+        </div>
+
+        <!-- 2. DESPUÉS EL RECUADRO CENTRAL -->
+        <div class="container info-box inicio-box">
+            
+            <div class="welcome-content">
+                <!-- CABECERA -->
+                <div class="welcome-header">
+                    <div class="server-status-badge">
+                        <div class="status-dot"></div>
+                        <span class="status-text">SERVER ONLINE</span>
+                    </div>
+                    <h2 class="glitch-small t-red">WORLD Z PROYECT AETERNA</h2>
+                    <h3 class="subtitle-orange">¿Tienes lo necesario para sobrevivir al fin del mundo?</h3>
+                    <p class="desc-text">
+                        Adéntrate en un páramo desolado donde la sociedad ha <strong class="t-red">colapsado</strong>. Si bien las <span class="t-green">hordas de no muertos</span> acechan en cada rincón, pronto descubrirás una verdad más oscura: <strong class="t-orange">el peligro más letal son los otros supervivientes</strong>. Sobrevivir requiere más que munición; requiere <span class="t-purple">estrategia</span>, alianzas de hierro y la voluntad de apretar el gatillo antes que tu enemigo.
+                    </p>
+                </div>
+                <div class="scroll-hint">Contenido del Servidor:</div>
+                <!-- CARRUSEL -->
+                <div class="pro-carousel-container">
+                    
+                    <button class="carousel-btn prev-btn">❮</button>
+                     
+                    <div class="pro-carousel-track">
+                        <video src="img/DUELOS.mp4" class="pro-carousel-item" autoplay loop muted playsinline></video>
+                         <video src="img/spawn.mp4" class="pro-carousel-item" autoplay loop muted playsinline></video>
+                        <video src="img/armas.mp4" class="pro-carousel-item" autoplay loop muted playsinline></video>
+                         <video src="img/ciudad.mp4" class="pro-carousel-item" autoplay loop muted playsinline></video>
+                          <video src="img/hordas.mp4" class="pro-carousel-item" autoplay loop muted playsinline></video>
+                         <video src="img/clan.mp4" class="pro-carousel-item" autoplay loop muted playsinline></video>
+                          <video src="img/koth.mp4" class="pro-carousel-item" autoplay loop muted playsinline></video>
+                       <video src="img/cajas.mp4" class="pro-carousel-item" autoplay loop muted playsinline></video>
+                    </div>
+                    <button class="carousel-btn next-btn">❯</button>
+                </div>
+               
+                
+                <!-- SECCIÓN 1: LO QUE TE ESPERA -->
+                <div class="info-sector sector-green">
+                    <h3 class="sector-title">LO QUE TE ESPERA EN EL PÁRAMO</h3>
+                    <ul class="tactical-list">
+                        <li>
+                            <span class="highlight">Arsenal y Amenazas:</span> Explora ciudades abandonadas y enfréntate a una brutal variedad de enemigos con una amplia selección de armamento avanzado.
+                        </li>
+                        <li>
+                            <span class="highlight">Economía y Progresión:</span> Desbloquea llaves, kits de supervivencia y rangos exclusivos utilizando los puntos que ganes dominando eventos.
+                        </li>
+                        <li>
+                            <span class="highlight">Apoya el Proyecto:</span> Si deseas acelerar tu progreso, adquiere rangos, kits y llaves directamente desde nuestra tienda oficial.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- SECCIÓN 2: MECÁNICAS -->
+                <div class="info-sector sector-purple">
+                    <h3 class="sector-title">MECÁNICAS Y MODOS DE JUEGO</h3>
+                    <ul class="tactical-list">
+                        <li>
+                            <span class="highlight">Sistema de Suministros:</span> Saquea cajas de botín. El 90% se consigue de forma gratuita jugando. Para equiparte rápido, la tienda ofrece acceso inmediato a llaves.
+                        </li>
+                        <li>
+                            <span class="highlight">Supervivencia y Clanes:</span> La unión hace la fuerza. Forja tu clan, reclama territorio y aplasta a tus rivales en los eventos KOTH.
+                        </li>
+                        <li>
+                            <span class="highlight">Modo Competitivo (Estilo CoD):</span> Un mundo dedicado al combate puro.
+                            <ul class="sub-list">
+                                <li>Duelo por Equipos, Todos contra Todos y Vs. Bots.</li>
+                                <li>Crea hasta 10 clases personalizadas o usa clases predefinidas tácticas.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div> <!-- Cierre del info-box -->
+
+        <!-- 3. IMAGEN DE FONDO DIFUMINADA (Al final para que no estorbe la estructura) -->
+        <div class="bg-decor-slot">
+            <img src="img/bien.png" class="bg-decor-img" alt="Fondo Temático">
+        </div>
+        
+    </div>
+</section>
+
+
+
+
+<!-- SECCIÓN TUTORIAL - DISEÑO HORIZONTAL PANORÁMICO -->
+<section id="tutorial" class="section tutorial-panoramic">
+    
+    <div class="tutorial-header">
+        <h2 class="glitch-small t-green">GUÍA DE INSTALACIÓN</h2>
+        <p class="desc-text">
+            Selecciona tu launcher para entrar al servidor de minecraft <strong>World Z Project Resureccion</strong>. Recomendamos CurseForge.
+        </p>
+        <div class="tactical-note2">
+                    <span class="icon">⚡</span> <strong>OTROS Launchers:</strong> El proceso de intalacion del modpack es igual para cualquier otro launcher "No Premium" 
+                </div>
+    </div>
+
+    <!-- CAPA 1: OSO EN MEDIO (FONDO) -->
+    <div class="character-slot-background">
+        <img src="img/modpack.png" class="character-float" alt="Oso Modpack">
+    </div>
+
+    <!-- CAPA 2: CUADRÍCULA DE VIDEOS (FRENTE) -->
+    <div class="tutorial-grid">
+        <!-- TARJETA 1 -->
+        <div class="tut-card curse-card">
+            <div class="tut-header">
+                <span class="tut-number">01</span>
+                <h3 class="step-title t-curse">CurseForge</h3>
+                <h4 class="t-recom">Recomendado para Premiums </h4>
+            </div>
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/vfVm3KBM3Pw?si=cmJ82aJdweR9TgUh&amp;start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- TARJETA 2 -->
+        <div class="tut-card sk-card">
+            <div class="tut-header">
+                <span class="tut-number">02</span>
+                <h3 class="step-title t-sk">SKLauncher</h3>
+            </div>
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/HrGlXADRmXk?si=vNQG7JYjuwW92FKc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- TARJETA 3 -->
+        <div class="tut-card tl-card">
+            <div class="tut-header">
+                <span class="tut-number">03</span>
+                <h3 class="step-title t-tl">TLauncher</h3>
+            </div>
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/id0HUlYfTx8?si=DwA_zDHPzwAA2H4V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+             
+        </div>
+
+    </div>
+</section>
+
+
+<!-- SECCIÓN COMUNIDAD (Oso a la derecha) -->
+<section id="comunidad" class="section">
+    <div class="main-layout reverse"> <!-- La clase reverse mueve el oso a la izquierda -->
+        <div class="container info-box">
+            <h2 class="t-purple">NUESTRA COMUNIDAD</h2>
+            <p class="desc-text">
+                Únete a nuestro Discord oficial para recibir soporte técnico, 
+                participar en sorteos y conocer a otros sobrevivientes.
+            </p>
+            <div class="btn-group">
+                <a href="https://discord.gg/WpjncuSqm9" class="btn btn-discord">DISCORD</a>
+                <a href="https://worldz-resurecction-proyect.tebex.io" class="btn btn-store">TIENDA</a>
+            </div>
+        </div>
+        <div class="character-slot">
+            <img src="img/comunidad.png" class="character-float" alt="Oso Comunidad">
+        </div>
+        <!-- NUEVA IMAGEN DIFUMINADA DE FONDO (Se irá automáticamente a la Derecha) -->
+        <div class="bg-decor-slot">
+            <img src="img/comun.png" class="bg-decor-img" alt="Fondo Temático">
+        </div>
+    </div>
+</section>
+
+<section id="modpack" class="section">
+    
+    <!-- Este es el contenedor que nos faltaba para que todo se acomode -->
+    <div class="main-layout"> 
+        
+        <!-- 1. RECUADRO DE INFORMACIÓN (CENTRO) -->
+        <div class="container info-box modpack-box">
+            <h2 class="glitch-small t-orange">EL MODPACK</h2>
+            
+            
+            <div class="modpack-intro">
+                <p class="desc-text highlight-orange">
+                    La experiencia apocalíptica definitiva. Equípate, sobrevive y domina.
+                </p>
+                <div class="tactical-note">
+                    <span class="icon">⚡</span> <strong>Plug & Play:</strong> El acceso a World Z Proyect Aeterna ya viene agregado en el modpack ¡Solo instala y entra a jugar!
+                </div>
+                <div class="ip-box">
+                    <span class="ip-label">IP DIRECTA (Opcional)</span>
+                    <code class="ip-address">worldz.tarohosting.com</code>
+                </div>
+            </div>
+
+            <!-- CONTENEDOR DEL VIDEO -->
+            <div class="video-wrapper modpack-video">
+                <!-- OJO AQUÍ: Cambia las letras del final por las de tu video de YouTube -->
+               <iframe 
+    src="https://www.youtube.com/embed/D2GFS1wUo_M?si=rUKjFmtlyOdYucRy" 
+    title="World Z Project Trailer" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
+            </div>
+
+            <!-- CARRUSEL DE IMÁGENES -->
+            <h3 class="sector-title" style="color: var(--orange); margin-top: 25px; font-size: 1.1rem; text-align: left;">CONTENIDO DEL MODPACK</h3>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- Pon el nombre real de tus fotos aquí -->
+                    <video src="img/armas.mp4" class="pro-carousel-item" autoplay loop muted playsinline></video>
+                         <video src="img/ciudad.mp4" class="pro-carousel-item" autoplay loop muted playsinline></video>
+                          <video src="img/hordas.mp4" class="pro-carousel-item" autoplay loop muted playsinline></video>
+                    <img src="img/1.png" alt="Ciudad destruida" class="carousel-img">
+                    <img src="img/2.png" alt="Horda Zombie" class="carousel-img">
+                    <img src="img/3.png" alt="Biomas" class="carousel-img">
+                    <img src="img/4.png" alt="Biomas" class="carousel-img">
+                    <img src="img/5.png" alt="Biomas" class="carousel-img">
+                    <img src="img/6.png" alt="Biomas" class="carousel-img">
+                </div>
+                <div class="scroll-hint">Desliza para ver más →</div>
+            </div>
+
+            <!-- BOTÓN DE DESCARGA -->
+           
+            <a href="https://www.curseforge.com/minecraft/modpacks/worldz-project-aeterna-biotec/files/7947819" class="btn btn-modpack" style="margin-top: 15px; width: 100%; display: block; box-sizing: border-box;">DESCARGAR MODPACK</a>
+            <p class="desc-text highlight-orange">
+                    Descarga la app Curseforge para poder instalar el modpack!!!
+                </p>
+            <a href="https://www.curseforge.com/download/app" class="btn btn-cuseforge style="margin-top: 15px; width: 100%; display: block; box-sizing: border-box;">DESCARGAR APP CURSEFORGE</a>
+        </div>
+
+        <!-- 2. PERSONAJE DE OSO (IZQUIERDA) -->
+        <div class="character-slot">
+            <!-- Asegúrate de poner el nombre de tu imagen del oso aquí -->
+            <img src="img/tutorial.png" class="character-float" alt="Oso Modpack">
+        </div>
+
+        <!-- 3. IMAGEN DE FONDO DIFUMINADA (DERECHA) -->
+        <div class="bg-decor-slot">
+            <!-- Asegúrate de poner el nombre de tu imagen de fondo aquí -->
+            <img src="img/bienv.png" class="bg-decor-img" alt="Fondo Temático">
+        </div>
+        
+    </div>
+</section>
+
+    <script src="script.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const track = document.querySelector('.carousel-track');
+        let isHovered = false;
+
+        // Pausa el carrusel si el usuario pone el ratón encima
+        track.addEventListener('mouseenter', () => isHovered = true);
+        track.addEventListener('mouseleave', () => isHovered = false);
+
+        setInterval(() => {
+            if (!isHovered) {
+                // Calcula el ancho de una imagen para saber cuánto avanzar
+                const imgWidth = track.querySelector('.carousel-img').clientWidth + 15; // 15 es el gap
+                
+                // Si llegamos al final del carrusel, regresamos al inicio
+                if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 5) {
+                    track.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    // Si no, avanzamos a la siguiente imagen
+                    track.scrollBy({ left: imgWidth, behavior: 'smooth' });
+                }
+            }
+        }, 10000); // 3000 = 3 segundos. Puedes cambiar este número para hacerlo más rápido o más lento
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const proTrack = document.querySelector('.pro-carousel-track');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        // Función para mover a la izquierda
+        prevBtn.addEventListener('click', () => {
+            const itemWidth = proTrack.clientWidth;
+            proTrack.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+        });
+
+        // Función para mover a la derecha
+        nextBtn.addEventListener('click', () => {
+            const itemWidth = proTrack.clientWidth;
+            proTrack.scrollBy({ left: itemWidth, behavior: 'smooth' });
+        });
+    });
+</script>
+</body>
+</html>
+<script>
+    // Seleccionamos todos los links de la barra y todas las secciones
+    const navLinks = document.querySelectorAll('.navbar a');
+    const sections = document.querySelectorAll('.section');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            // Si el scroll está dentro de la sección (con un margen de 150px)
+            if (pageYOffset >= (sectionTop - 150)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            // Si el href del link coincide con la sección actual, le pone el brillo
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
+</html>
