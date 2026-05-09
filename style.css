@@ -289,6 +289,12 @@ p, li {
 }
 .btn-discord:hover { box-shadow: 0 0 25px rgba(155, 89, 182, 0.7); transform: scale(1.05); }
 
+.btn-zip{ 
+    background-color: #b6596d !important; 
+    color: white !important;
+}
+.btn-zip:hover { box-shadow: 0 0 25px rgba(238, 62, 106, 0.7); transform: scale(1.05); }
+
 .btn-store { 
     background-color: #2ecc71 !important; 
     color: #000 !important; 
@@ -373,8 +379,8 @@ p, li {
 /* Brillos personalizados para cada launcher al hacer Hover */
 .curse-card:hover { border-color: var(--orange); box-shadow: 0 15px 30px rgba(255, 140, 0, 0.2); }
 .sk-card:hover { border-color: var(--green); box-shadow: 0 15px 30px rgba(46, 204, 113, 0.2); }
-.tl-card:hover { border-color: var(--purple); box-shadow: 0 15px 30px rgba(155, 89, 182, 0.2); }
-
+.tl-card:hover { border-color: var(--purple); box-shadow: 0 15px 30px rgba(101, 67, 145, 0.2); }
+.man-card:hover {border-color: var(--red); box-shadow: 0 15px 30px rgba(241, 14, 14, 0.521);}
 /* Encabezado de la Tarjeta (Número + Título) */
 .tut-header {
     display: flex;
@@ -439,6 +445,7 @@ p, li {
 .t-recom { color: var(--red) !important; text-shadow: 0 0 10px rgba(255, 140, 0, 0.5) !important; }
 .t-sk { color: var(--green) !important; text-shadow: 0 0 10px rgba(46, 204, 113, 0.5) !important; }
 .t-tl { color: var(--purple) !important; text-shadow: 0 0 10px rgba(155, 89, 182, 0.5) !important; }
+.t-man { color: var(--red) !important; text-shadow: 0 0 10px rgba(230, 45, 45, 0.849) !important; }
 
 .tutorial-item .step-title.t-curse { color: var(--orange) !important; }
 .tutorial-item .step-title.t-sk { color: var(--green) !important; }
