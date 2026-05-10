@@ -1104,3 +1104,45 @@ p, li {
         max-width: 320px !important;
     }
 }
+
+/* ====== ESTILOS SOLO PARA PÁRRAFOS <p> ====== */
+
+/* 🟡 TARJETA 1: AMARILLO NEÓN */
+.curse-card .info-lado p {
+    color: #FFD700 !important; /* Amarillo Dorado */
+    /* ✨ EFECTO BRILLO / DESBORDE */
+    text-shadow: 0 0 4px #FFD700, 
+                 0 0 8px #FFD700, 
+                 0 0 12px rgba(255, 215, 0, 0.6) !important;
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+}
+
+/* 🟢 TARJETA 2: VERDE NEÓN */
+.sk-card .info-lado p {
+    color: #39FF14 !important; /* Verde Radiactivo */
+    text-shadow: 0 0 4px #39FF14, 
+                 0 0 8px #39FF14, 
+                 0 0 12px rgba(57, 255, 20, 0.6) !important;
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+}
+
+/* 🟣 TARJETA 3: MORADO / VIOLETA NEÓN */
+.tl-card .info-lado p {
+    color: #BC13FE !important; /* Morado Eléctrico */
+    text-shadow: 0 0 4px #BC13FE, 
+                 0 0 8px #BC13FE, 
+                 0 0 12px rgba(188, 19, 254, 0.6) !important;
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+}
+
+/* 🟠 TARJETAS 4 Y 5 (POR SI LAS USAS): NARANJA */
+.man-card .info-lado p {
+    color: #FF6600 !important;
+    text-shadow: 0 0 4px #FF6600, 
+                 0 0 8px #FF6600, 
+                 0 0 12px rgba(255, 102, 0, 0.6) !important;
+    font-weight: 500 !important;
+}
