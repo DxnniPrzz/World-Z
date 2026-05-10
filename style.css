@@ -1060,9 +1060,9 @@ p, li {
     min-height: 200px !important;
 
     /* ✅ EFECTO TRANSPARENTE / DESENFOQUE IGUAL A LAS OTRAS */
-    background: rgba(26, 26, 46, 0.65) !important; 
-    backdrop-filter: blur(12px) !important; 
-    -webkit-backdrop-filter: blur(12px) !important; 
+    background: rgba(255, 255, 255, 0.03) !important; 
+    backdrop-filter: blur(10px) !important; 
+    -webkit-backdrop-filter: blur(10px) !important; 
 
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 12px !important;
