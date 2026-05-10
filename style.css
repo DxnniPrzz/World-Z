@@ -1045,56 +1045,54 @@ p, li {
 
 
 
-/* ====== ✅ NUEVA CLASE: SOLO PARA TARJETAS ANCHAS ====== */
-.tutorial-grid--completo {
-    width: 100% !important;       /* 🎯 ANCHO TOTAL PANTALLA */
+/* 🟩 SOLO ESTA CLASE PARA 4 Y 5: ANCHO COMPLETO / DELGADO */
+.tutorial-grid-a {
+    display: grid;
+    grid-template-columns: 1fr; /* Una sola columna que ocupa todo */
+    gap: 20px;
+    width: 100% !important;      
     max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 0 !important;        
+    padding: 10px 0 !important;
+    box-sizing: border-box;
+    z-index: 10; 
+    position: relative;
 }
 
-.tut-card--ancho {
+/* 🎯 AMBAS TARJETAS (4 Y 5) MISMA FORMA: FILA HORIZONTAL */
+.tutorial-grid-a .tut-card {
     width: 100% !important;
     max-width: 100% !important;
-    display: flex !important;      /* 🔹 ORGANIZA EN FILA */
+    display: flex !important;
     flex-direction: row !important;
     align-items: flex-start !important;
     gap: 25px !important;
-    min-height: 180px !important;   /* 🎯 ALTO DELGADO */
+    min-height: 180px !important;
     box-sizing: border-box !important;
 }
 
-/* 📹 BLOQUE IZQUIERDO (VÍDEO/IMAGEN) */
-.tut-card--ancho .tut-imagen,
-.tut-card--ancho iframe,
-.tut-card--ancho video {
-    width: 320px !important;       /* 🎯 TAMAÑO FIJO PEQUEÑO */
-    height: 180px !important;
-    flex-shrink: 0 !important;      /* NO SE ENCOJE */
+/* 📹 VIDEO PEQUEÑO FIJO A LA IZQUIERDA */
+.video-lado iframe {
+    width: 300px !important;
+    height: 170px !important;
+    flex-shrink: 0 !important;
     border-radius: 6px !important;
 }
 
-/* 📝 BLOQUE DERECHO (TEXTO Y BOTONES) */
-.tut-card--ancho .tut-contenido {
-    flex: 1 !important;             /* OCUPA TODO EL RESTO */
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
+/* 📝 TEXTO OCUPA TODO EL RESTO A LA DERECHA */
+.info-lado {
+    flex: 1 !important;
 }
 
-/* 📱 PARA CELULARES: VOLVER A VERTICAL */
+/* 📱 CELULARES: VUELVEN VERTICALES SOLAS */
 @media (max-width: 768px) {
-    .tut-card--ancho {
+    .tutorial-grid-a .tut-card {
         flex-direction: column !important;
         text-align: center !important;
     }
-    .tut-card--ancho .tut-imagen,
-    .tut-card--ancho iframe,
-    .tut-card--ancho video {
+    .video-lado iframe {
         width: 100% !important;
         max-width: 320px !important;
         margin: auto !important;
     }
 }
-
-
