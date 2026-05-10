@@ -1034,55 +1034,67 @@ p, li {
 .prev-btn { left: 10px; }
 .next-btn { right: 10px; }
 
-/* 🟩 SOLO ESTA CLASE PARA 4 Y 5: ANCHO COMPLETO / DELGADO */
+
 .tutorial-grid-a {
     display: grid;
-    grid-template-columns: 1fr; /* Una sola columna que ocupa todo */
+    grid-template-columns: 1fr;
     gap: 30px;
-    width: 90% !important;      
-    max-width: 90% !important;
-    margin: 0 !important;        
-    padding: 10px 0 !important;
+    width: 90% !important;      /* ✅ MISMO ANCHO QUE LOS OTROS */
+    max-width: 1200px !important;
+    margin: -80px auto 40px auto !important; /* ✅ SUPERPUESTO SOBRE IMAGEN */
+    padding: 0 !important;
     box-sizing: border-box;
-    z-index: 10; 
     position: relative;
+    z-index: 15 !important;
 }
 
-/* 🎯 AMBAS TARJETAS (4 Y 5) MISMA FORMA: FILA HORIZONTAL */
+/* 🎯 TARJETA: CENTRADO VERTICAL ENTRE VIDEO Y TEXTO */
 .tutorial-grid-a .tut-card {
     width: 100% !important;
     max-width: 100% !important;
     display: flex !important;
     flex-direction: row !important;
-    align-items: flex-start !important;
+    align-items: center !important; /* 🔑 CLAVE: CENTRA EL VIDEO AL MEDIO */
     gap: 25px !important;
-    min-height: 180px !important;
+    min-height: 200px !important;
+
+    /* 🎨 ESTILO IGUAL A LOS DEMÁS */
+    background-color: #1a1a2e !important;
+    border: 1px solid #333 !important;
+    border-radius: 10px !important;
+    padding: 20px !important;
     box-sizing: border-box !important;
 }
 
-/* 📹 VIDEO PEQUEÑO FIJO A LA IZQUIERDA */
+/* 📹 VIDEO FIJO IZQUIERDA (CENTRADO DENTRO) */
+.video-lado {
+    display: flex !important;
+    align-items: center !important; /* 🔑 ASEGURA EL CENTRADO */
+    flex-shrink: 0 !important;
+}
+
 .video-lado iframe {
     width: 300px !important;
     height: 170px !important;
-    flex-shrink: 0 !important;
     border-radius: 6px !important;
 }
 
-/* 📝 TEXTO OCUPA TODO EL RESTO A LA DERECHA */
+/* 📝 TEXTO */
 .info-lado {
     flex: 1 !important;
+    color: #fff !important;
 }
 
-/* 📱 CELULARES: VUELVEN VERTICALES SOLAS */
+/* 📱 CELULARES */
 @media (max-width: 768px) {
+    .tutorial-grid-a {margin: -40px auto 20px auto !important;}
     .tutorial-grid-a .tut-card {
         flex-direction: column !important;
         text-align: center !important;
+        align-items: center !important;
     }
     .video-lado iframe {
         width: 100% !important;
         max-width: 320px !important;
-        margin: auto !important;
     }
 }
-
