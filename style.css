@@ -1038,56 +1038,62 @@ p, li {
 .tutorial-grid-a {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 30px;
-    width: 90% !important;      /* ✅ MISMO ANCHO QUE LOS OTROS */
+    gap: 25px;
+
+    /* 🎯 MISMO TAMAÑO Y CENTRADO QUE LOS OTROS */
+    width: 90% !important;      
     max-width: 1200px !important;
-    margin: -80px auto 40px auto !important; /* ✅ SUPERPUESTO SOBRE IMAGEN */
-    padding: 0 !important;
-    box-sizing: border-box;
+    margin: 30px auto 40px auto !important; /* 🔴 YA NO SE SUBEN ENCIMA DE LAS 3 */
+
     position: relative;
-    z-index: 15 !important;
+    z-index: 10 !important;
 }
 
-/* 🎯 TARJETA: CENTRADO VERTICAL ENTRE VIDEO Y TEXTO */
+/* 🎯 ESTILO IGUAL EXACTO A LAS TARJETAS DE ARRIBA */
 .tutorial-grid-a .tut-card {
     width: 100% !important;
     max-width: 100% !important;
     display: flex !important;
     flex-direction: row !important;
-    align-items: center !important; /* 🔑 CLAVE: CENTRA EL VIDEO AL MEDIO */
+    align-items: center !important; /* 🔑 VIDEO CENTRADO VERTICALMENTE */
     gap: 25px !important;
     min-height: 200px !important;
 
-    /* 🎨 ESTILO IGUAL A LOS DEMÁS */
-    background-color: #1a1a2e !important;
-    border: 1px solid #333 !important;
-    border-radius: 10px !important;
+    /* ✅ EFECTO TRANSPARENTE / DESENFOQUE IGUAL A LAS OTRAS */
+    background: rgba(26, 26, 46, 0.65) !important; 
+    backdrop-filter: blur(12px) !important; 
+    -webkit-backdrop-filter: blur(12px) !important; 
+
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
     padding: 20px !important;
     box-sizing: border-box !important;
+    color: #ffffff !important;
 }
 
-/* 📹 VIDEO FIJO IZQUIERDA (CENTRADO DENTRO) */
+/* 📹 VIDEO PEQUEÑO IZQUIERDO (CENTRADO EN SU LADO) */
 .video-lado {
     display: flex !important;
-    align-items: center !important; /* 🔑 ASEGURA EL CENTRADO */
+    align-items: center !important;
+    justify-content: center !important;
     flex-shrink: 0 !important;
 }
 
 .video-lado iframe {
     width: 300px !important;
     height: 170px !important;
-    border-radius: 6px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
 }
 
-/* 📝 TEXTO */
+/* 📝 TEXTO LADO DERECHO */
 .info-lado {
     flex: 1 !important;
-    color: #fff !important;
 }
 
 /* 📱 CELULARES */
 @media (max-width: 768px) {
-    .tutorial-grid-a {margin: -40px auto 20px auto !important;}
+    .tutorial-grid-a {margin: 20px auto !important;}
     .tutorial-grid-a .tut-card {
         flex-direction: column !important;
         text-align: center !important;
