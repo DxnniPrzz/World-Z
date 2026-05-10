@@ -1039,8 +1039,8 @@ p, li {
     display: grid;
     grid-template-columns: 1fr; /* Una sola columna que ocupa todo */
     gap: 30px;
-    width: 100% !important;      
-    max-width: 100% !important;
+    width: 90% !important;      
+    max-width: 90% !important;
     margin: 0 !important;        
     padding: 10px 0 !important;
     box-sizing: border-box;
