@@ -568,19 +568,6 @@ p, li {
     position: relative; 
 }
 
-.tutorial-grid-a{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    
-    /* --- AQUÍ ESTÁ EL CAMBIO --- */
-    width: 95%; /* Aprovecha casi toda la pantalla de lado a lado */
-    max-width: 1600px; /* Subimos el límite de 1200px a 1600px para que crezcan mucho más */
-    /* --------------------------- */
-    
-    z-index: 10; 
-    position: relative; 
-}
 
 /* Asegurarnos de que las tarjetas no tengan márgenes raros en el grid */
 .tutorial-grid .tut-card {
@@ -648,15 +635,7 @@ p, li {
     z-index: 10; /* CAPA 2: Se viene para el frente */
     position: relative; /* Necesario para que el z-index funcione correctamente aquí */
 }
-tutorial-grid-a {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    width: 90%;
-    max-width: 1200px;
-    z-index: 10; /* CAPA 2: Se viene para el frente */
-    position: relative; /* Necesario para que el z-index funcione correctamente aquí */
-}
+
 
 /* Para que en celular no se vea gigante el oso de fondo */
 @media (max-width: 768px) {
@@ -1059,7 +1038,7 @@ tutorial-grid-a {
 .tutorial-grid-a {
     display: grid;
     grid-template-columns: 1fr; /* Una sola columna que ocupa todo */
-    gap: 20px;
+    gap: 30px;
     width: 100% !important;      
     max-width: 100% !important;
     margin: 0 !important;        
