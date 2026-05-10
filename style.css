@@ -1044,22 +1044,23 @@ p, li {
 .next-btn { right: 10px; }
 
 
-
-/* 🟩 RECUADROS 4 Y 5: MISMA ESTRUCTURA ANCHA Y DELGADA */
+/* 🟩 RECUADROS 4 Y 5: SUPERPUESTOS + ANCHOS / DELGADOS */
 .tutorial-grid-a {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 25px; /* 🎯 ESPACIO ENTRE ELLOS */
+    gap: 25px;
+    
+    /* 🎯 MISMA UBICACIÓN QUE LOS OTROS */
     width: 90%; 
-    max-width: 1200px; /* 🎯 MISMO LÍMITE QUE LOS 3 PRIMEROS */
-    margin: 40px auto !important; /* 🎯 SEPARACIÓN DE ARRIBA + CENTRADO */
-    padding: 0;
-    box-sizing: border-box;
-    z-index: 10; 
+    max-width: 1200px; 
+    margin: -80px auto 40px auto; /* 🔴 MARGEN NEGATIVO = SUBE Y SE SUPONE */
+    
+    /* 📍 CLAVE PARA SUPERPONERSE */
     position: relative;
+    z-index: 15 !important; /* MAYOR QUE LA IMAGEN DE FONDO */
 }
 
-/* 🎯 ESTILO DE AMBAS TARJETAS (FONDO OSCURO COMO LOS DEMÁS) */
+/* 🎯 ESTILO DE AMBAS TARJETAS (ANCHA Y DELGADA) */
 .tutorial-grid-a .tut-card {
     width: 100%;
     max-width: 100%;
@@ -1069,12 +1070,13 @@ p, li {
     gap: 25px !important;
     min-height: 180px !important;
     
-    /* 🔑 FONDO Y BORDE IGUAL A LOS OTROS */
+    /* 🎨 IGUAL A LAS DEMÁS TARJETAS */
     background-color: #1a1a2e !important; 
     border: 1px solid #333 !important;
     border-radius: 10px !important;
     padding: 20px !important;
     box-sizing: border-box !important;
+    color: #fff !important;
 }
 
 /* 📹 VIDEO PEQUEÑO IZQUIERDA */
@@ -1088,18 +1090,11 @@ p, li {
 /* 📝 TEXTO DERECHA */
 .info-lado {
     flex: 1 !important;
-    color: #fff !important; /* TEXTO BLANCO COMO LOS DEMÁS */
 }
 
 /* 📱 CELULARES */
 @media (max-width: 768px) {
-    .tutorial-grid-a .tut-card {
-        flex-direction: column !important;
-        text-align: center !important;
-    }
-    .video-lado iframe {
-        width: 100% !important;
-        max-width: 320px !important;
-        margin: auto !important;
-    }
+    .tutorial-grid-a {margin: -40px auto 20px auto;} /* Menos elevación en cel */
+    .tutorial-grid-a .tut-card {flex-direction: column !important; text-align: center !important;}
+    .video-lado iframe {width: 100% !important; max-width: 320px !important; margin: auto !important;}
 }
