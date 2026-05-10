@@ -1045,33 +1045,39 @@ p, li {
 
 
 
-/* 🟩 SOLO ESTA CLASE PARA 4 Y 5: ANCHO COMPLETO / DELGADO */
+/* 🟩 RECUADROS 4 Y 5: MISMA ESTRUCTURA ANCHA Y DELGADA */
 .tutorial-grid-a {
     display: grid;
-    grid-template-columns: 1fr; /* Una sola columna que ocupa todo */
-    gap: 20px;
-    width: 100% !important;      
-    max-width: 100% !important;
-    margin: 0 !important;        
-    padding: 10px 0 !important;
+    grid-template-columns: 1fr;
+    gap: 25px; /* 🎯 ESPACIO ENTRE ELLOS */
+    width: 90%; 
+    max-width: 1200px; /* 🎯 MISMO LÍMITE QUE LOS 3 PRIMEROS */
+    margin: 40px auto !important; /* 🎯 SEPARACIÓN DE ARRIBA + CENTRADO */
+    padding: 0;
     box-sizing: border-box;
     z-index: 10; 
     position: relative;
 }
 
-/* 🎯 AMBAS TARJETAS (4 Y 5) MISMA FORMA: FILA HORIZONTAL */
+/* 🎯 ESTILO DE AMBAS TARJETAS (FONDO OSCURO COMO LOS DEMÁS) */
 .tutorial-grid-a .tut-card {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 100%;
+    max-width: 100%;
     display: flex !important;
     flex-direction: row !important;
     align-items: flex-start !important;
     gap: 25px !important;
     min-height: 180px !important;
+    
+    /* 🔑 FONDO Y BORDE IGUAL A LOS OTROS */
+    background-color: #1a1a2e !important; 
+    border: 1px solid #333 !important;
+    border-radius: 10px !important;
+    padding: 20px !important;
     box-sizing: border-box !important;
 }
 
-/* 📹 VIDEO PEQUEÑO FIJO A LA IZQUIERDA */
+/* 📹 VIDEO PEQUEÑO IZQUIERDA */
 .video-lado iframe {
     width: 300px !important;
     height: 170px !important;
@@ -1079,12 +1085,13 @@ p, li {
     border-radius: 6px !important;
 }
 
-/* 📝 TEXTO OCUPA TODO EL RESTO A LA DERECHA */
+/* 📝 TEXTO DERECHA */
 .info-lado {
     flex: 1 !important;
+    color: #fff !important; /* TEXTO BLANCO COMO LOS DEMÁS */
 }
 
-/* 📱 CELULARES: VUELVEN VERTICALES SOLAS */
+/* 📱 CELULARES */
 @media (max-width: 768px) {
     .tutorial-grid-a .tut-card {
         flex-direction: column !important;
