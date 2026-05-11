@@ -1140,7 +1140,7 @@ p, li {
 
 /* 🟠 TARJETAS 4 Y 5 (POR SI LAS USAS): NARANJA */
 .man-card .info-lado p {
-    color: #FF6600 !important;
+    color: #FFB07D !important;
     text-shadow: 0 0 4px #FF6600, 
                  0 0 8px #FF6600, 
                  0 0 12px rgba(255, 102, 0, 0.6) !important;
